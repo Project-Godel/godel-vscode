@@ -26,7 +26,7 @@
     ],
     "publisher": "jsannemo",
     "repository": {
-        "url": "https://github.com/jsannemo/godel-vscode.git",
+        "url": "https://github.com/project-godel/godel-vscode.git",
         "type": "git"
     },
     "contributes": {
