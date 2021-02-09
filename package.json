@@ -1,0 +1,66 @@
+{
+    "name": "projectgodel",
+    "displayName": "Project Gödel Runner",
+    "description": "Test harnesses for Project Gödel task solutions.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.53.0"
+    },
+    "dependencies": {
+        "path": "^0.12.7",
+        "shell-escape": "^0.2.0",
+        "vscode-languageclient": "^7.0.0",
+        "which": "^2.0.2"
+    },
+    "devDependencies": {
+        "@types/node": "12.12.2",
+        "@types/shell-escape": "^0.2.0",
+        "@types/vscode": "^1.52.0",
+        "@types/which": "^2.0.0"
+    },
+    "extensionDependencies": [
+        "jsannemo.spooky"
+    ],
+    "categories": [
+        "Testing"
+    ],
+    "publisher": "jsannemo",
+    "repository": {
+        "url": "https://github.com/jsannemo/godel-vscode.git",
+        "type": "git"
+    },
+    "contributes": {
+        "commands": [
+            {
+                "command": "projectgodel.run",
+                "title": "Gödel: Test Task"
+            }
+        ],
+        "menus": {
+            "editor/context": [
+                {
+                    "when": "resourceFilename =~ /(distributed-add)\\.spooky/",
+                    "command": "projectgodel.run",
+                    "group": "navigation"
+                }
+            ],
+            "commandPalette": [
+                {
+                    "when": "resourceFilename =~ /(distributed-add)\\.spooky/",
+                    "command": "projectgodel.run"
+                }
+            ]
+        }
+    },
+    "activationEvents": [
+        "onLanguage:spooky",
+        "onCommand:projectgodel.run"
+    ],
+    "main": "./out/extension.js",
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "lint": "eslint . --ext .ts,.tsx",
+        "watch": "tsc -watch -p ./"
+    }
+}
