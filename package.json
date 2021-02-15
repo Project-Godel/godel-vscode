@@ -39,14 +39,14 @@
         "menus": {
             "editor/context": [
                 {
-                    "when": "resourceFilename =~ /(distributed-add)\\.spooky/",
+                    "when": "resourceFilename =~ /(distributed-add|majority|binary-sort)\\.spooky/",
                     "command": "projectgodel.run",
                     "group": "navigation"
                 }
             ],
             "commandPalette": [
                 {
-                    "when": "resourceFilename =~ /(distributed-add)\\.spooky/",
+                    "when": "resourceFilename =~ /(distributed-add|majority|binary-sort)\\.spooky/",
                     "command": "projectgodel.run"
                 }
             ]
